@@ -246,7 +246,8 @@ export enum ModalId {
     IMPORT = "import",
     TAG = "tag",
     FIRSTMODAL = "firstmodal",
-    NOTIF = "notif"
+    NOTIF = "notif",
+    MERGE_CLUSTER = "merge_cluster"
 }
 
 export interface StatusUpdate {

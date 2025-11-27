@@ -216,6 +216,18 @@
             "erase_tooltip": "Erase this field for whole selection",
             "cancel_tooltip": "Cancel changes"
         },
+        "merge_cluster": {
+            "title": "Merge cluster",
+            "description": "Select the image to copy and choose how to resolve conflicting fields.",
+            "empty_cluster": "No images available in this cluster.",
+            "conflict": "Conflict",
+            "combine_choice": "Combine values",
+            "keep_from": "Keep values from {name}",
+            "empty_value": "No value",
+            "confirm": "Create merged image",
+            "error": "Unable to merge this cluster, please try again.",
+            "conflict_hint": "When a field is different, you can pick one value or merge them with \" -- \"."
+        },
         "tags": {
             "filter_tree": "Display only selected tags",
             "unselect_tree": "Cancel selection",
@@ -397,7 +409,8 @@
             "dirty": "Data is not up to-date, click to reload"
         },
         "close-clusters": "Close clusters",
-        "save-clusters": "Save the clusters in a new property"
+        "save-clusters": "Save the clusters in a new property",
+        "merge-cluster": "Merge cluster"
     },
     "datepicker": {
         "cancel": "Cancel",
@@ -415,7 +428,9 @@
             "instances": "All instances properties",
             "image": "Image properties",
             "delete": "Do you really want to delete property"
-        }
+        },
+        "yes": "Yes",
+        "no": "No"
     },
     "installing": "Installing",
     "installed": "Installed",

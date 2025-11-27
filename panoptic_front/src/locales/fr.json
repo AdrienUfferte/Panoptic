@@ -220,6 +220,18 @@
             "erase_tooltip": "Effacer le champ pour toute la sélection",
             "cancel_tooltip": "Annuler les changements"
         },
+        "merge_cluster": {
+            "title": "Fusionner le cluster",
+            "description": "Sélectionnez l'image à copier et choisissez comment résoudre les champs en conflit.",
+            "empty_cluster": "Aucune image disponible dans ce cluster.",
+            "conflict": "Conflit",
+            "combine_choice": "Fusionner les valeurs",
+            "keep_from": "Garder les valeurs de {name}",
+            "empty_value": "Aucune valeur",
+            "confirm": "Créer l'image fusionnée",
+            "error": "Impossible de fusionner ce cluster, veuillez réessayer.",
+            "conflict_hint": "Lorsque des champs diffèrent, choisissez-en un ou fusionnez-les avec \" -- \"."
+        },
         "tags": {
             "filter_tree": "Afficher seulement les tags selectionnés",
             "unselect_tree": "Annuler la selection",
@@ -401,7 +413,8 @@
             "dirty": "Actualisation nécessaire\nCliquez pour actualiser"
         },
         "close-clusters": "Retirer les clusters",
-        "save-clusters": "Sauvegarde les clusters dans une propriétés tag"
+        "save-clusters": "Sauvegarde les clusters dans une propriétés tag",
+        "merge-cluster": "Fusionner le cluster"
     },
     "datepicker": {
         "cancel": "Annuler",
@@ -417,7 +430,9 @@
             "instances": "Propriété des instances",
             "image": "Propriétés d'image",
             "delete": "Voulez vous vraiment supprimer la propriété"
-        }
+        },
+        "yes": "Oui",
+        "no": "Non"
     },
     "plugin": {
         "remove": "Supprimer le Plugin",

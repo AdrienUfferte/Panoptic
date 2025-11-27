@@ -6,12 +6,14 @@ import SelectCircle from '@/components/inputs/SelectCircle.vue'
 import wTT from '../../tooltips/withToolTip.vue'
 import ClusterBadge from '@/components/cluster/ClusterBadge.vue'
 import { Group, GroupManager, GroupTree, GroupType, buildGroup } from '@/core/GroupManager'
-import { DbCommit, GroupLine, GroupResult, ImagePropertyValue, Instance, InstancePropertyValue, Property, PropertyMode, PropertyType, Sha1ToInstances, Tag, buildTag } from '@/data/models'
+import { DbCommit, GroupLine, GroupResult, ImagePropertyValue, Instance, InstancePropertyValue, ModalId, Property, PropertyMode, PropertyType, Sha1ToInstances, Tag, buildTag } from '@/data/models'
 import ActionButton from '@/components/actions/ActionButton.vue'
 import { useDataStore } from '@/data/dataStore'
 import { allChildrenSha1Groups } from '@/utils/utils'
+import { usePanopticStore } from '@/data/panopticStore'
 
 const data = useDataStore()
+const panoptic = usePanopticStore()
 
 const props = defineProps<{
     item: GroupLine
@@ -65,6 +67,11 @@ function clear() {
 
 async function recommandImages() {
     emits('recommend', props.item.data.id)
+}
+
+function mergeCluster() {
+    if (group.value.type != GroupType.Cluster) return
+    panoptic.showModal(ModalId.MERGE_CLUSTER, { images: group.value.images })
 }
 
 function toggleClosed() {
@@ -207,6 +214,12 @@ function childrenToTags(children: Group[], idFunc: Function, parentTag: Tag, tag
             <div class="ms-2">
                 <ActionButton action="execute" :images="instancesForExecute" style="font-size: 10px;"
                     @groups="addClusters" />
+            </div>
+
+            <div v-if="group.type == GroupType.Cluster && !hasSubgroups && hasImages" class="ms-2">
+                <wTT message="btn.merge-cluster">
+                    <div class="button" @click="mergeCluster">{{ $t('btn.merge-cluster') }}</div>
+                </wTT>
             </div>
 
             <div v-if="(hasImages) && !hasSubgroups && !(group.type == GroupType.Cluster) && someValue" class="ms-2">
