@@ -15,6 +15,7 @@ import FirstModal from '@/components/modals/FirstModal.vue'
 import NotifModal from '@/components/modals/NotifModal.vue'
 import { useSocketStore } from '@/data/socketStore'
 import UserSelection from '@/components/UserSelection.vue'
+import MergeClusterModal from '@/components/modals/MergeClusterModal.vue'
 
 const socketStore = useSocketStore()
 const panoptic = usePanopticStore()
@@ -46,6 +47,7 @@ onMounted(() => {
             <TagModal />
             <FirstModal />
             <NotifModal />
+            <MergeClusterModal />
         </template>
     </template>
     <div id="popup" style="position: fixed; top:0;left: 0; z-index: 9990;"></div>
